@@ -2,8 +2,10 @@ from django.shortcuts import render
 
 
 def index(request):
-    pass
+    context = {'title': 'Анализ tfidf'}
+    return render(request, 'tfidf_table/index.html', context=context)
 
 
 def result(request):
-    pass
+    context = {'title': 'Результат анализа'}
+    return render(request, 'tfidf_table/result.html', context=context)
