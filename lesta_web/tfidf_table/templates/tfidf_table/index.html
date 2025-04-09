@@ -1,4 +1,11 @@
 {% extends 'tfidf_table/base.html' %}
 
 {% block content %}
+
+<form action="{% url 'tfidf_table:result' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_div }}
+    <button type="submit">Отправить файл</button>
+</form>
+
 {% endblock %}
