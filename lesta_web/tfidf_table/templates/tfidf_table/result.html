@@ -1,4 +1,34 @@
 {% extends 'tfidf_table/base.html' %}
 
 {% block content %}
+
+<table>
+    <thead>
+    <tr>
+      <th scope="col">Слово</th>
+      <th scope="col">Файл и его tf</th>
+      <th scope="col">idf</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    {% for word in tfidf_table %}
+    <tr>
+        <td>
+            {{ word.name }}
+        </td>
+        <td>
+            {% for tf in word.tf %}
+                {{ tf }}
+            <br>
+            {% endfor %}
+        </td>
+        <td>
+            {{ word.idf }}
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
 {% endblock %}
