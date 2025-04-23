@@ -1,21 +1,32 @@
 from django.shortcuts import render
-
-from . import forms
-from .utils import save_file
-
-
-def index(request):
-    context = {
-        'title': 'Анализ tfidf',
-        'form': forms.FileForm(),
-    }
-    return render(request, 'tfidf_table/index.html', context=context)
+from .utils import compute_tfidf
+from django.views.generic.edit import FormView
+from .forms import UploadFilesForm
 
 
-def result(request):
-    context = {'title': 'Результат анализа'}
-    if request.method == 'POST':
-        form = forms.FileForm(request.POST, request.FILES)
+class UploadFilesView(FormView):
+    form_class = UploadFilesForm
+    template_name = 'tfidf_table/index.html'
+
+    def get(self, request, *args, **kwargs):
+        context = {
+            'title': 'Анализ tfidf',
+            'form': self.form_class,
+        }
+        return render(request, self.template_name, context=context)
+
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
         if form.is_valid():
-            save_file(request.FILES['file'])
-    return render(request, 'tfidf_table/result.html', context=context)
+            files = request.FILES.getlist('file_field')
+            results = compute_tfidf(files)
+            context = {
+                'title': 'Результаты анализа',
+                'tfidf_table': results,
+            }
+            return render(request, 'tfidf_table/result.html', context=context)
+        context = {
+            'title': 'Анализ tfidf',
+            'form': self.form_class,
+        }
+        return render(request, self.template_name, context=context)
