@@ -1,6 +1,6 @@
 import re
 from django.core.files.uploadedfile import UploadedFile
-from pymorphy2 import MorphAnalyzer
+from pymorphy3 import MorphAnalyzer
 from math import log10
 from collections import deque
 from nltk.corpus import stopwords
