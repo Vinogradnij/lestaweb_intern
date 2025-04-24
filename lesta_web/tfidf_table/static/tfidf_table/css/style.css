@@ -1,0 +1,116 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    background-color: #14593e;
+    font-size: 16px;
+    text-align: center;
+    color: #d2e0c9;
+    border-color: #d2e0c9;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #d2e0c9;
+}
+
+header {
+    flex 0 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-bottom: 1px solid;
+}
+
+header div {
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+main {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.create-form {
+    margin: 10px;
+    padding: 5px;
+}
+
+.create-form div {
+    margin: 10px;
+    padding: 5px;
+}
+
+label {
+    font-size: 24px;
+}
+
+input[type=file] {
+    background-color: #d2e0c9;
+    border: 1px solid #14593e;
+    border-radius: 5px;
+    color: #14593e;
+    padding: 15px 32px;
+    font-size: 24px;
+}
+
+button[type=submit] {
+    background-color: #d2e0c9;
+    border: 1px solid #14593e;
+    border-radius: 5px;
+    color: #14593e;
+    padding: 15px 32px;
+    font-size: 24px;
+}
+
+table {
+    margin: 4px;
+    font-size: 24px;
+}
+
+th, td {
+  border: 1px solid;
+  padding: 4px;
+}
+
+th {
+    font-size: 32px;
+}
+
+tr:hover {
+    background-color: coral;
+    background-color: #d2e0c9;
+    color: #14593e;
+}
+
+
+
+
+footer {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-top: 1px solid;
+}
+
+footer a {
+    margin: 10px;
+    padding: 5px;
+}
