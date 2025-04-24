@@ -92,13 +92,9 @@ th {
 }
 
 tr:hover {
-    background-color: coral;
     background-color: #d2e0c9;
     color: #14593e;
 }
-
-
-
 
 footer {
     flex: 0 0 auto;
