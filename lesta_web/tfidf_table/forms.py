@@ -20,4 +20,4 @@ class _MultipleFileField(forms.FileField):
 
 
 class UploadFilesForm(forms.Form):
-    file_field = _MultipleFileField(label='Файлы')
+    file_field = _MultipleFileField(label='Выберите файлы для анализа с помощью кнопки')
