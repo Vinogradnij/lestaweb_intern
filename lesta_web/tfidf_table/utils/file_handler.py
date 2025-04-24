@@ -69,7 +69,7 @@ class Word:
         result = {'name': self._word, 'tf': []}
         for filename in self._count_in_files.keys():
             tf = round(self._count_in_files[filename] / files_with_counter[filename], 5)
-            result['tf'].append(f'{tf} файла {filename}')
+            result['tf'].append(f'{tf} для файла {filename}')
         idf = round(log10(len(files_with_counter)/len(self._count_in_files)), 5)
         result['idf'] = idf
         return result
