@@ -1,13 +1,29 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'tfidf_table/css/style.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <title>{{title}}</title>
 </head>
+
 <body>
+
+<header>
+    <div>Анализ tfidf</div>
+</header>
+
 <main>
     {% block content %}
     {% endblock %}
 </main>
+
+<footer>
+    <a href="https://github.com/Vinogradnij/lestaweb_intern/blob/master/readme.md">О проекте</a>
+</footer>
+
 </body>
+
 </html>
